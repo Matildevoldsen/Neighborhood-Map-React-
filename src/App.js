@@ -130,9 +130,26 @@ class App extends Component {
                 }
                 resp.json().then(function (data) {
                     var place = data.response.venues[0];
-                    var open = "<p>" + place.verified + "</p>";
-                    var location = "<p>" + place.location.address + "</p>";
-                    self.setContent(open + location);
+                    let phone = '';
+
+                    if (place.contact.formattedPhone) {
+                        phone = "<p><b>Phone:</b> "+ place.contact.formattedPhone +"</p>";
+                    }
+
+                    let twitter = '';
+
+                    if (place.contact.twitter) {
+                        twitter = "<p><b>Phone:</b> "+ place.contact.twitter +"</p>";
+                    }
+
+                    var info =
+                        "<div id='marker'>" +
+                            "<h2>" + self.marker.title + "</h2>" +
+                            phone +
+                            twitter +
+                            "<p><b>Address:</b> " + place.location.address + ", " + place.location.city + "</p>" +
+                        "</div>";
+                    self.setContent(info);
                 });
 
                 console.log(place);

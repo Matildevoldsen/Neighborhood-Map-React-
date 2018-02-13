@@ -91,15 +91,15 @@ header {
           text-decoration: none;
           font-size: 1.5rem; }
 
-#marker h1,
-#marker h2,
-#marker h3,
-#marker h4,
-#marker h5,
-#marker h6 {
-  font-size: 2.3rem; }
-#marker p {
-  font-size: 1.6rem; }
+#marker {
+  font-size: 1.8rem; }
+  #marker h1,
+  #marker h2,
+  #marker h3,
+  #marker h4,
+  #marker h5,
+  #marker h6 {
+    font-size: 2.3rem; }
 
 @media screen and (max-width: 400px) {
   header h1 {
