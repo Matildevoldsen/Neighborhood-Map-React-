@@ -126,7 +126,8 @@ class App extends Component {
         fetch(url)
             .then(function (resp) {
                 if (resp.status !== 200) {
-                 this.state.info.setContent("Can't load data.");
+                    const err = "Can't load data.";
+                 this.state.info.setContent(err);
                 }
                 resp.json().then(function (data) {
                     var place = data.response.venues[0];
@@ -155,7 +156,8 @@ class App extends Component {
                 console.log(place);
             })
             .catch(function (err) {
-                console.log(err);
+                const error = "Can't load data.";
+                self.setContent(error);
             });
 
     }
@@ -172,7 +174,7 @@ class App extends Component {
                     >
 
                     </Sidebar>
-                    <h1>Londons Cafe's</h1>
+                    <h1 id="title">Londons Cafe's</h1>
                 </header>
                 <Map markers={this.state.markers}></Map>
             </div>
