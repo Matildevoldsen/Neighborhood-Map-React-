@@ -70,7 +70,7 @@ class App extends Component {
             center: {lat: 51.509865, lng: -0.118092}
         });
 
-        var infowindow = new window.google.maps.InfoWindow({});
+        const infowindow = new window.google.maps.InfoWindow({});
 
         this.setState({map: map, info: infowindow});
         this.generateMarkers(map);
@@ -127,8 +127,9 @@ class App extends Component {
             .then(function (resp) {
                 if (resp.status !== 200) {
                     const err = "Can't load data.";
-                 this.state.info.setContent(err);
+                    this.setState({info: err});
                 }
+
                 resp.json().then(function (data) {
                     var place = data.response.venues[0];
                     let phone = '';
@@ -140,7 +141,7 @@ class App extends Component {
                     let twitter = '';
 
                     if (place.contact.twitter) {
-                        twitter = "<p><b>Phone:</b> "+ place.contact.twitter +"</p>";
+                        twitter = "<p><b>Twitter:</b> "+ place.contact.twitter +"</p>";
                     }
 
                     var info =
@@ -191,6 +192,7 @@ function createMapLink(url) {
     script.onerror = function () {
         document.write("Google Maps can't be loaded");
     };
+
     tag.parentNode.insertBefore(script, tag);
 }
 
