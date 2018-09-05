@@ -190,7 +190,7 @@ function createMapLink(url) {
     script.src = url;
     script.async = true;
     script.onerror = function () {
-        document.write("Google Maps can't be loaded");
+        document.write("Google Maps can't be loaded. Please reload the page, and if that doesn't work reload the page. Otherwise reload page.");
     };
 
     tag.parentNode.insertBefore(script, tag);
