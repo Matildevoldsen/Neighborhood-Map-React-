@@ -10,6 +10,8 @@ This app functionality is to locate cafe's in London by map. It also includes a 
 
 To install you first need to download by **git clone** or download button. Afterwards you should use **npm i** or **npm install** and then **npm start** to start the project.
 
+Please take a look at the [demo site](https://matildevoldsen.github.io/Neighborhood-Map-React-/).
+
 ### Google Maps
 
 This application uses Google maps to display the markers.
